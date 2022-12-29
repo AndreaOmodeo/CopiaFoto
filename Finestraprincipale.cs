@@ -29,7 +29,7 @@ namespace CopiaFoto
         private void btnSorgente_Click(object sender, EventArgs e)
         {
             FolderBrowserDialog folderBrowser1 = new FolderBrowserDialog();
-            folderBrowser1.SelectedPath = txtDestinazione.Text;
+            folderBrowser1.SelectedPath = txtSorgente.Text;
             if (DialogResult.OK == folderBrowser1.ShowDialog())
                 txtSorgente.Text = folderBrowser1.SelectedPath;
         }
@@ -90,9 +90,31 @@ namespace CopiaFoto
 
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
-            ConfigurationManager.AppSettings.Set("sorgente", txtSorgente.Text);
-            ConfigurationManager.AppSettings.Set("destinazione", txtDestinazione.Text);
+            AddOrUpdateAppSettings("sorgente", txtSorgente.Text);
+            AddOrUpdateAppSettings("destinazione", txtDestinazione.Text);
             base.OnFormClosing(e);
+        }
+
+        public static void AddOrUpdateAppSettings(string key, string value)
+        {
+            try
+            {
+                var configFile = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+                var settings = configFile.AppSettings.Settings;
+                if (settings[key] == null)
+                {
+                    settings.Add(key, value);
+                }
+                else
+                {
+                    settings[key].Value = value;
+                }
+                configFile.Save(ConfigurationSaveMode.Modified);
+                ConfigurationManager.RefreshSection(configFile.AppSettings.SectionInformation.Name);
+            }
+            catch (ConfigurationErrorsException)
+            {
+            }
         }
     }
 }

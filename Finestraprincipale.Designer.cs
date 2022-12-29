@@ -86,14 +86,14 @@ namespace CopiaFoto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(691, 447);
             this.Controls.Add(this.btnProcedi);
             this.Controls.Add(this.btnDestinazione);
             this.Controls.Add(this.btnSorgente);
             this.Controls.Add(this.txtDestinazione);
             this.Controls.Add(this.txtSorgente);
             this.Name = "Finestraprincipale";
-            this.Text = "Form1";
+            this.Text = "Copia";
             this.ResumeLayout(false);
             this.PerformLayout();
 
