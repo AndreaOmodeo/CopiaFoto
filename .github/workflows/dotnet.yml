@@ -25,7 +25,7 @@ jobs:
     - name: Build
       run: dotnet build --p:EnableWindowsTargeting=true --no-restore
     - name: Upload Console App
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3
       with:
         name: Upload
-        path: bin/Release
+        path: bin/Release/netcoreapp3.1
