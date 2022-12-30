@@ -5,6 +5,8 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <UseWindowsForms>true</UseWindowsForms>
     <ApplicationIcon>Applicazione.ico</ApplicationIcon>
+    <StartupObject>CopiaFoto.Program</StartupObject>
+    <SignAssembly>false</SignAssembly>
   </PropertyGroup>
 
 </Project>
