@@ -24,6 +24,8 @@ jobs:
       run: dotnet restore  /p:EnableWindowsTargeting=true
     - name: Build
       run: dotnet build --p:EnableWindowsTargeting=true --no-restore
+    - name: Curioso
+      run: ls -larR
     - name: Upload Console App
       uses: actions/upload-artifact@v3
       with:
