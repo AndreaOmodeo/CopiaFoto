@@ -49,8 +49,15 @@ namespace CopiaFoto
             string dirSorgente = txtSorgente.Text;
             string dirDest = txtDestinazione.Text;
 
-            CopiaRipetuta(dirSorgente, dirDest);
-
+            try
+            {
+                CopiaRipetuta(dirSorgente, dirDest);
+                MessageBox.Show("Fatto", "Operazione completata", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Errore", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void CopiaRipetuta(string dirSorgente, string dirDest)
