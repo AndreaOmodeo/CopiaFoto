@@ -62,7 +62,7 @@ namespace CopiaFoto
 
         private void CopiaRipetuta(string dirSorgente, string dirDest)
         {
-            string mPattern = "2022";
+            string mPattern = "2023";
             foreach (string s in Directory.GetFiles(dirSorgente))
             {
                 System.IO.FileInfo fi = new FileInfo(s);
