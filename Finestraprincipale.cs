@@ -62,12 +62,10 @@ namespace CopiaFoto
 
         private void CopiaRipetuta(string dirSorgente, string dirDest)
         {
-            string mPattern = "2023";
             foreach (string s in Directory.GetFiles(dirSorgente))
             {
                 System.IO.FileInfo fi = new FileInfo(s);
-                if (s.IndexOf(mPattern) > 0)
-                    MoveCopy(s, dirDest);
+                MoveCopy(s, dirDest);
             }
         }
 
@@ -87,7 +85,7 @@ namespace CopiaFoto
 
         private string EstraiData(string sPartenza)
         {
-            var m = Regex.Matches(sPartenza, @"(IMG|VID)_(\d{8})");
+            var m = Regex.Matches(sPartenza, @"(ANO|IMG|VID)_(\d{8})");
             if (m.Count==1)
             {
                 return m[0].Value.Substring(4,8);
