@@ -27,7 +27,7 @@ jobs:
     - name: Curioso
       run: ls -larR bin
     - name: Upload Console App
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: Upload
         path: bin/Debug/netcoreapp3.1
