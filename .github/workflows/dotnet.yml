@@ -31,4 +31,4 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: Upload
-        path: bin/Debug/net6.0/
+        path: bin/Debug/net8.0-windows7.0
