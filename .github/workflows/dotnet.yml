@@ -12,7 +12,7 @@ on:
 jobs:
   build:
 
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
 
     steps:
     - uses: actions/checkout@v4
@@ -21,13 +21,13 @@ jobs:
       with:
         dotnet-version: 6.0.x
     - name: Restore dependencies
-      run: dotnet restore  /p:EnableWindowsTargeting=true
+      run: dotnet restore 
     - name: Build
-      run: dotnet build --p:EnableWindowsTargeting=true --no-restore
+      run: dotnet build  --no-restore
     - name: Curioso
       run: ls -larR bin
     - name: Upload Console App
       uses: actions/upload-artifact@v4
       with:
         name: Upload
-        path: bin/Debug/netcoreapp3.1
+        path: bin/Debug/net6.0/
