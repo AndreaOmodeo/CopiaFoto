@@ -25,7 +25,7 @@ jobs:
     - name: Build
       run: dotnet build  --no-restore
     - name: Curioso
-      run: ls -larR bin
+      run: dir /s
     - name: Upload Console App
       uses: actions/upload-artifact@v4
       with:
