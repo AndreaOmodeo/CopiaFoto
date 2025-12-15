@@ -24,6 +24,11 @@ namespace CopiaFoto
             string strDestinazione = ConfigurationManager.AppSettings.Get("destinazione");
             if (Directory.Exists(strDestinazione))
                 txtDestinazione.Text = strDestinazione;
+            string azione = ConfigurationManager.AppSettings.Get("azione");
+            if (azione == "muovi")
+                rdoMuovi.Checked = true;
+            else
+                rdoCopia.Checked = true;
         }
 
         private void btnSorgente_Click(object sender, EventArgs e)
@@ -72,14 +77,22 @@ namespace CopiaFoto
         private void MoveCopy(string sPartenza, string baseDirDest)
         {
             string data = EstraiData(sPartenza);
-            if(data!=null)
+            if (data != null)
             {
                 data = String.Concat(data.Substring(0, 4), "-", data.Substring(4, 2), "-", data.Substring(6, 2));
                 string dirDest = Path.Combine(baseDirDest, data);
-                string pathDest= Path.Combine(dirDest, Path.GetFileName(sPartenza));
+                string pathDest = Path.Combine(dirDest, Path.GetFileName(sPartenza));
                 if (!Directory.Exists(dirDest))
                     Directory.CreateDirectory(dirDest);
-                File.Copy(sPartenza, pathDest, false);
+
+                if (rdoMuovi.Checked)
+                {
+                    File.Move(sPartenza, pathDest);
+                }
+                else
+                {
+                    File.Copy(sPartenza, pathDest, false);
+                }
             }
         }
 
@@ -97,6 +110,7 @@ namespace CopiaFoto
         {
             AddOrUpdateAppSettings("sorgente", txtSorgente.Text);
             AddOrUpdateAppSettings("destinazione", txtDestinazione.Text);
+            AddOrUpdateAppSettings("azione", rdoMuovi.Checked ? "muovi" : "copia");
             base.OnFormClosing(e);
         }
 

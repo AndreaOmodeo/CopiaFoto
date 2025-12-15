@@ -29,73 +29,113 @@ namespace CopiaFoto
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtSorgente = new System.Windows.Forms.TextBox();
-            this.txtDestinazione = new System.Windows.Forms.TextBox();
-            this.btnSorgente = new System.Windows.Forms.Button();
-            this.btnDestinazione = new System.Windows.Forms.Button();
-            this.btnProcedi = new System.Windows.Forms.Button();
-            this.SuspendLayout();
+            txtSorgente = new System.Windows.Forms.TextBox();
+            txtDestinazione = new System.Windows.Forms.TextBox();
+            btnSorgente = new System.Windows.Forms.Button();
+            btnDestinazione = new System.Windows.Forms.Button();
+            btnProcedi = new System.Windows.Forms.Button();
+            grpAzione = new System.Windows.Forms.GroupBox();
+            rdoCopia = new System.Windows.Forms.RadioButton();
+            rdoMuovi = new System.Windows.Forms.RadioButton();
+            grpAzione.SuspendLayout();
+            SuspendLayout();
             // 
             // txtSorgente
             // 
-            this.txtSorgente.Location = new System.Drawing.Point(12, 12);
-            this.txtSorgente.Name = "txtSorgente";
-            this.txtSorgente.Size = new System.Drawing.Size(437, 23);
-            this.txtSorgente.TabIndex = 0;
-            this.txtSorgente.Text = "C:\\";
+            txtSorgente.Location = new System.Drawing.Point(12, 12);
+            txtSorgente.Name = "txtSorgente";
+            txtSorgente.Size = new System.Drawing.Size(437, 23);
+            txtSorgente.TabIndex = 0;
+            txtSorgente.Text = "C:\\";
             // 
             // txtDestinazione
             // 
-            this.txtDestinazione.Location = new System.Drawing.Point(13, 42);
-            this.txtDestinazione.Name = "txtDestinazione";
-            this.txtDestinazione.Size = new System.Drawing.Size(436, 23);
-            this.txtDestinazione.TabIndex = 1;
-            this.txtDestinazione.Text = "D:\\";
+            txtDestinazione.Location = new System.Drawing.Point(13, 42);
+            txtDestinazione.Name = "txtDestinazione";
+            txtDestinazione.Size = new System.Drawing.Size(436, 23);
+            txtDestinazione.TabIndex = 1;
+            txtDestinazione.Text = "D:\\";
             // 
             // btnSorgente
             // 
-            this.btnSorgente.Location = new System.Drawing.Point(455, 12);
-            this.btnSorgente.Name = "btnSorgente";
-            this.btnSorgente.Size = new System.Drawing.Size(104, 23);
-            this.btnSorgente.TabIndex = 2;
-            this.btnSorgente.Text = "Sorgente...";
-            this.btnSorgente.UseVisualStyleBackColor = true;
-            this.btnSorgente.Click += new System.EventHandler(this.btnSorgente_Click);
+            btnSorgente.Location = new System.Drawing.Point(455, 12);
+            btnSorgente.Name = "btnSorgente";
+            btnSorgente.Size = new System.Drawing.Size(104, 23);
+            btnSorgente.TabIndex = 2;
+            btnSorgente.Text = "Sorgente...";
+            btnSorgente.UseVisualStyleBackColor = true;
+            btnSorgente.Click += btnSorgente_Click;
             // 
             // btnDestinazione
             // 
-            this.btnDestinazione.Location = new System.Drawing.Point(455, 42);
-            this.btnDestinazione.Name = "btnDestinazione";
-            this.btnDestinazione.Size = new System.Drawing.Size(104, 23);
-            this.btnDestinazione.TabIndex = 3;
-            this.btnDestinazione.Text = "Destinazione...";
-            this.btnDestinazione.UseVisualStyleBackColor = true;
-            this.btnDestinazione.Click += new System.EventHandler(this.btnDestinazione_Click);
+            btnDestinazione.Location = new System.Drawing.Point(455, 42);
+            btnDestinazione.Name = "btnDestinazione";
+            btnDestinazione.Size = new System.Drawing.Size(104, 23);
+            btnDestinazione.TabIndex = 3;
+            btnDestinazione.Text = "Destinazione...";
+            btnDestinazione.UseVisualStyleBackColor = true;
+            btnDestinazione.Click += btnDestinazione_Click;
             // 
             // btnProcedi
             // 
-            this.btnProcedi.Location = new System.Drawing.Point(59, 87);
-            this.btnProcedi.Name = "btnProcedi";
-            this.btnProcedi.Size = new System.Drawing.Size(186, 67);
-            this.btnProcedi.TabIndex = 4;
-            this.btnProcedi.Text = "Procedi";
-            this.btnProcedi.UseVisualStyleBackColor = true;
-            this.btnProcedi.Click += new System.EventHandler(this.btnProcedi_Click);
+            btnProcedi.Location = new System.Drawing.Point(373, 91);
+            btnProcedi.Name = "btnProcedi";
+            btnProcedi.Size = new System.Drawing.Size(186, 67);
+            btnProcedi.TabIndex = 4;
+            btnProcedi.Text = "Procedi";
+            btnProcedi.UseVisualStyleBackColor = true;
+            btnProcedi.Click += btnProcedi_Click;
+            // 
+            // grpAzione
+            // 
+            grpAzione.Controls.Add(rdoMuovi);
+            grpAzione.Controls.Add(rdoCopia);
+            grpAzione.Location = new System.Drawing.Point(30, 101);
+            grpAzione.Name = "grpAzione";
+            grpAzione.Size = new System.Drawing.Size(200, 100);
+            grpAzione.TabIndex = 5;
+            grpAzione.TabStop = false;
+            grpAzione.Text = "Azione";
+            // 
+            // rdoCopia
+            // 
+            rdoCopia.AutoSize = true;
+            rdoCopia.Location = new System.Drawing.Point(10, 22);
+            rdoCopia.Name = "rdoCopia";
+            rdoCopia.Size = new System.Drawing.Size(182, 19);
+            rdoCopia.TabIndex = 0;
+            rdoCopia.TabStop = true;
+            rdoCopia.Text = "&Copia mantenendo l'originale";
+            rdoCopia.UseVisualStyleBackColor = true;
+            // 
+            // rdoMuovi
+            // 
+            rdoMuovi.AutoSize = true;
+            rdoMuovi.Location = new System.Drawing.Point(10, 47);
+            rdoMuovi.Name = "rdoMuovi";
+            rdoMuovi.Size = new System.Drawing.Size(89, 19);
+            rdoMuovi.TabIndex = 1;
+            rdoMuovi.TabStop = true;
+            rdoMuovi.Text = "&Muovi i files";
+            rdoMuovi.UseVisualStyleBackColor = true;
             // 
             // Finestraprincipale
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(691, 447);
-            this.Controls.Add(this.btnProcedi);
-            this.Controls.Add(this.btnDestinazione);
-            this.Controls.Add(this.btnSorgente);
-            this.Controls.Add(this.txtDestinazione);
-            this.Controls.Add(this.txtSorgente);
-            this.Name = "Finestraprincipale";
-            this.Text = "Copia";
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            ClientSize = new System.Drawing.Size(691, 447);
+            Controls.Add(grpAzione);
+            Controls.Add(btnProcedi);
+            Controls.Add(btnDestinazione);
+            Controls.Add(btnSorgente);
+            Controls.Add(txtDestinazione);
+            Controls.Add(txtSorgente);
+            Name = "Finestraprincipale";
+            Text = "Copia";
+            grpAzione.ResumeLayout(false);
+            grpAzione.PerformLayout();
+            ResumeLayout(false);
+            PerformLayout();
 
         }
 
@@ -106,6 +146,9 @@ namespace CopiaFoto
         private System.Windows.Forms.Button btnSorgente;
         private System.Windows.Forms.Button btnDestinazione;
         private System.Windows.Forms.Button btnProcedi;
+        private System.Windows.Forms.GroupBox grpAzione;
+        private System.Windows.Forms.RadioButton rdoMuovi;
+        private System.Windows.Forms.RadioButton rdoCopia;
     }
 }
 
